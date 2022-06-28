@@ -10,6 +10,9 @@
 lazygit/*
 !lazygit/config.yml
 
+!lvim
+lvim/plugin
+
 !Code/
 Code/*
 !Code/User
