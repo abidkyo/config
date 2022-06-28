@@ -1,0 +1,38 @@
+[user]
+	name = abidkyo
+	email = kyotasuna95@gmail.com
+	signingKey = ""
+[color]
+	ui = auto
+[alias]
+	alias = config --get-regexp alias
+	co = checkout
+	rabort = rebase --abort
+	rcont = rebase --continue
+	st = status
+  fetchp = fetch --prune --prune-tags
+  gconfig = config --global --edit
+  lconfig = config --edit
+  ll = "!f() { git log --stat --max-count=${1-5}; }; f"
+  ls = "!f() { git log --pretty=format:'%C(yellow)%h%Creset -%C(green)%d%Creset %s' --max-count=${1-10}; }; f"
+  pa = push --all
+  pad = push --all --dry-run
+  rei = rebase -i
+  reii = "!f() { git rebase -i HEAD~${1-2}; }; f"
+  rs = reset HEAD^
+  sp = stash pop
+[core]
+	autocrlf = false
+	editor = lvim
+	excludesFile = ~/.gitignore
+[gpg]
+	program = gpg
+[commit]
+	gpgSign = false
+[tag]
+	forceSignAnnotated = false
+[pull]
+	rebase = true
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential

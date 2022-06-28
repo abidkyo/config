@@ -1,3 +1,20 @@
 # ignore everything
 /*
 
+# except
+!.gitignore
+!git
+!clang
+
+!lazygit
+lazygit/*
+!lazygit/config.yml
+
+!Code/
+Code/*
+!Code/User
+Code/User/*
+!Code/User/init.vim
+!Code/User/keybindings.json
+!Code/User/settings.json
+
