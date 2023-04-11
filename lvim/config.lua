@@ -19,6 +19,7 @@ lvim.colorscheme = "onedarker"
 vim.opt.linebreak = true
 vim.opt.wrap = true
 vim.opt.spelllang = "en,de"
+vim.opt.timeoutlen = 500
 
 -- keymappings [view all the defaults by pressing <leader>Lk]
 lvim.leader = "space"
