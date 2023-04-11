@@ -67,7 +67,7 @@ lvim.builtin.telescope.defaults.mappings = {
 -- }
 
 lvim.builtin.which_key.mappings.b.r = { ":bufdo e<CR>", "Reload all buffer" }
-lvim.builtin.which_key.mappings.m = { ":make<CR>", "Make" }
+-- lvim.builtin.which_key.mappings.m = { ":make<CR>", "Make" }
 lvim.builtin.which_key.mappings.l.h = { ":ClangdSwitchSourceHeader<CR>", "Source/Header" }
 
 -- TODO: User Config for predefined plugins
