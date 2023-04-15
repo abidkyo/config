@@ -159,6 +159,11 @@ lvim.lsp.diagnostics.virtual_text = false
 --   },
 -- }
 
+local formatters = require "lvim.lsp.null-ls.formatters"
+formatters.setup {
+  { command = "prettier", filetypes = { "markdown", "html", "json", "css" } },
+}
+
 -- -- set additional linters
 -- local linters = require "lvim.lsp.null-ls.linters"
 -- linters.setup {
