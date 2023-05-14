@@ -21,6 +21,9 @@ vim.opt.wrap = true
 vim.opt.spelllang = "en,de"
 vim.opt.timeoutlen = 500
 
+-- disable lsp diagnostics virtual text
+vim.diagnostic.config { virtual_text = false }
+
 -- keymappings [view all the defaults by pressing <leader>Lk]
 lvim.leader = "space"
 -- add your own keymapping
@@ -98,9 +101,6 @@ lvim.builtin.treesitter.ensure_installed = {
 
 lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enable = true
-
--- disable lsp diagnostics virtual text
-lvim.lsp.diagnostics.virtual_text = false
 
 -- generic LSP settings
 
