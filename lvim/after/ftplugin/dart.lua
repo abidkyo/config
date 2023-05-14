@@ -1,5 +1,3 @@
-vim.cmd "setlocal commentstring=//%s"
-
 -- dartls setup
 local util = require "lspconfig/util"
 
