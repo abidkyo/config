@@ -161,7 +161,7 @@ lvim.builtin.treesitter.highlight.enable = true
 
 local formatters = require "lvim.lsp.null-ls.formatters"
 formatters.setup {
-  { command = "prettier", filetypes = { "markdown", "html", "json", "css" } },
+  { command = "prettier", filetypes = { "markdown", "html", "json", "css", "yaml" } },
 }
 
 -- -- set additional linters
