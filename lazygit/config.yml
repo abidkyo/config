@@ -96,9 +96,9 @@ git:
   parseEmoji: false
 os:
   copyToClipboardCmd: "" # See 'Custom Command for Copying to Clipboard' section
-  editPreset: "lvim" # see 'Configuring File Editing' section
-  edit: "lvim {{filename}}"
-  editAtLine: "lvim {{filename}} +{{line}}"
+  editPreset: "nvim" # see 'Configuring File Editing' section
+  edit: "nvim {{filename}}"
+  editAtLine: "nvim {{filename}} +{{line}}"
   editAtLineAndWait: ""
   editInTerminal: true
   open: ""
