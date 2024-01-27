@@ -21,3 +21,5 @@ Code/User/*
 !Code/User/keybindings.json
 !Code/User/settings.json
 
+!nvim
+
