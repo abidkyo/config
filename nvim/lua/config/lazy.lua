@@ -10,10 +10,11 @@ require("lazy").setup({
   },
   defaults = {
     lazy = false,
-    version = false, -- always use the latest git commit
+    version = false,
   },
   install = { colorscheme = { "tokyonight" } },
-  checker = { enabled = true }, -- automatically check for plugin updates
+  checker = { enabled = true },
+  change_detection = { enabled = false, notify = false, },
   performance = {
     rtp = {
       -- disable some rtp plugins

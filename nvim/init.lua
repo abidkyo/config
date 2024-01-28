@@ -2,7 +2,8 @@
 
 -- load options
 require("config.options")
+require("config.keymaps")
 
--- load lazy and then plugins
+-- load lazy and plugins
 require("config.lazy")
 
