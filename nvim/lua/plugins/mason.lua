@@ -6,6 +6,6 @@ return {
     require("mason").setup({
       ui = { icons = { package_installed = "✓", package_pending = "➜", package_uninstalled = "✗" } },
     })
-    vim.keymap.set("n", "<leader>lM", "<cmd>Mason<cr>", { desc = "Mason" })
+    vim.keymap.set("n", "<leader>lm", "<cmd>Mason<cr>", { desc = "Mason" })
   end,
 }

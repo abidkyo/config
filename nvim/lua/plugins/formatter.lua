@@ -20,7 +20,7 @@ return {
       },
     })
 
-    vim.keymap.set("n", "<leader>lC", "<cmd>ConformInfo<cr>", { desc = "Conform" })
+    vim.keymap.set("n", "<leader>lc", "<cmd>ConformInfo<cr>", { desc = "Conform" })
 
     vim.keymap.set({ "n", "v" }, "<leader>lf", function()
       conform.format({
