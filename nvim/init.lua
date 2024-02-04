@@ -6,4 +6,3 @@ require("config.keymaps")
 
 -- load lazy and plugins
 require("config.lazy")
-

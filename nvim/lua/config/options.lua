@@ -42,4 +42,3 @@ vim.opt.showmode = true
 -- search
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
-

@@ -1,12 +1,13 @@
 -- telescope
 
 return {
-  'nvim-telescope/telescope.nvim', tag = '0.1.5',
-  dependencies = { 'nvim-lua/plenary.nvim' },
+  "nvim-telescope/telescope.nvim",
+  tag = "0.1.5",
+  dependencies = { "nvim-lua/plenary.nvim" },
 
-  config = function ()
-    local actions = require('telescope.actions')
-    require('telescope').setup({
+  config = function()
+    local actions = require("telescope.actions")
+    require("telescope").setup({
       defaults = {
         mappings = {
           i = {
@@ -25,12 +26,11 @@ return {
       },
     })
 
-    local builtin = require('telescope.builtin')
-    vim.keymap.set('n', '<C-p>', builtin.git_files, {desc= "Git Files"})
-    vim.keymap.set('n', '<leader>ff', builtin.find_files, {desc = "Find Files"})
-    vim.keymap.set('n', '<leader>st', builtin.live_grep, {desc = "Search Text"})
-    vim.keymap.set('n', '<leader>vh', builtin.help_tags, {desc = "Vim Help"})
-    vim.keymap.set('n', '<leader>vk', builtin.keymaps, {desc = "Vim Keymaps"})
-  end
+    local builtin = require("telescope.builtin")
+    vim.keymap.set("n", "<C-p>", builtin.git_files, { desc = "Git Files" })
+    vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Find Files" })
+    vim.keymap.set("n", "<leader>st", builtin.live_grep, { desc = "Search Text" })
+    vim.keymap.set("n", "<leader>vh", builtin.help_tags, { desc = "Vim Help" })
+    vim.keymap.set("n", "<leader>vk", builtin.keymaps, { desc = "Vim Keymaps" })
+  end,
 }
-
