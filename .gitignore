@@ -22,4 +22,5 @@ Code/User/*
 !Code/User/settings.json
 
 !nvim
+!alacritty
 
