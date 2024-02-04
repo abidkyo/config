@@ -1,6 +1,6 @@
 -- nvim init
 
--- load options
+-- load config
 require("config.options")
 require("config.keymaps")
 
