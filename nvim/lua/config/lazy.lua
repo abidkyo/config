@@ -21,7 +21,7 @@ require("lazy").setup({
     lazy = false,
     version = "*",
   },
-  install = { colorscheme = { "tokyonight" } },
+  install = { colorscheme = { "catppuccin-mocha" } },
   checker = { enabled = false },
   change_detection = { enabled = false, notify = false },
   performance = {
@@ -37,3 +37,5 @@ require("lazy").setup({
     },
   },
 })
+
+vim.keymap.set("n", "<leader>lL", "<cmd>Lazy<cr>", { desc = "Lazy" })
