@@ -17,6 +17,7 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
     "help",
     "lspinfo",
     "man",
+    "neo-tree",
     "netrw",
     "notify",
     "qf",
