@@ -3,19 +3,21 @@
 return {
   "nvim-treesitter/nvim-treesitter",
   build = ":TSUpdate",
+  event = { "VeryLazy" },
   config = function()
-    local configs = require("nvim-treesitter.configs")
-    configs.setup({
+    require("nvim-treesitter.configs").setup({
       ensure_installed = {
         "bash",
+        "bibtex",
+        "c",
+        "cpp",
+        "html",
         "json",
         "latex",
-        "c",
         "lua",
+        "python",
         "vim",
         "vimdoc",
-        "python",
-        "html",
       },
       sync_install = false,
       highlight = { enable = true },

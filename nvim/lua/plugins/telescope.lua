@@ -32,5 +32,6 @@ return {
     vim.keymap.set("n", "<leader>st", builtin.live_grep, { desc = "Search Text" })
     vim.keymap.set("n", "<leader>vh", builtin.help_tags, { desc = "Vim Help" })
     vim.keymap.set("n", "<leader>vk", builtin.keymaps, { desc = "Vim Keymaps" })
+    vim.keymap.set("n", "<leader>vr", builtin.registers, { desc = "Vim Registers" })
   end,
 }
