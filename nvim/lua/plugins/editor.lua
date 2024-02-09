@@ -15,7 +15,7 @@ return {
       { "<leader>e", "<cmd>Neotree toggle filesystem float<cr>", desc = "NeoTree" },
     },
     deactivate = function()
-      vim.cmd([[Neotree close]])
+      vim.cmd("Neotree close")
     end,
     opts = {
       sources = { "filesystem" }, -- no need others
