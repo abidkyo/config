@@ -4,34 +4,29 @@ return {
   "nvim-telescope/telescope.nvim",
   tag = "0.1.5",
   dependencies = { "nvim-lua/plenary.nvim" },
-
-  config = function()
-    local actions = require("telescope.actions")
-    require("telescope").setup({
-      defaults = {
-        mappings = {
-          i = {
-            ["<C-j>"] = actions.move_selection_next,
-            ["<C-k>"] = actions.move_selection_previous,
-            ["<C-n>"] = actions.cycle_history_next,
-            ["<C-p>"] = actions.cycle_history_prev,
-          },
-          -- for normal mode
-          n = {
-            ["<C-j>"] = actions.move_selection_next,
-            ["<C-k>"] = actions.move_selection_previous,
-            ["q"] = actions.close,
-          },
+  keys = {
+    { "<C-p>", "<cmd>Telescope git_files<cr>", desc = "Git Files" },
+    { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find Files" },
+    { "<leader>st", "<cmd>Telescope live_grep<cr>", desc = "Search Text" },
+    { "<leader>vh", "<cmd>Telescope help_tags<cr>", desc = "Vim Help" },
+    { "<leader>vk", "<cmd>Telescope keymaps<cr>", desc = "Vim Keymaps" },
+    { "<leader>vr", "<cmd>Telescope registers<cr>", desc = "Vim Registers" },
+  },
+  opts = {
+    defaults = {
+      mappings = {
+        i = {
+          ["<C-j>"] = "move_selection_next",
+          ["<C-k>"] = "move_selection_previous",
+          ["<C-n>"] = "cycle_history_next",
+          ["<C-p>"] = "cycle_history_prev",
+        },
+        n = {
+          ["<C-j>"] = "move_selection_next",
+          ["<C-k>"] = "move_selection_previous",
+          ["q"] = "close",
         },
       },
-    })
-
-    local builtin = require("telescope.builtin")
-    vim.keymap.set("n", "<C-p>", builtin.git_files, { desc = "Git Files" })
-    vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Find Files" })
-    vim.keymap.set("n", "<leader>st", builtin.live_grep, { desc = "Search Text" })
-    vim.keymap.set("n", "<leader>vh", builtin.help_tags, { desc = "Vim Help" })
-    vim.keymap.set("n", "<leader>vk", builtin.keymaps, { desc = "Vim Keymaps" })
-    vim.keymap.set("n", "<leader>vr", builtin.registers, { desc = "Vim Registers" })
-  end,
+    },
+  },
 }
