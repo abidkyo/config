@@ -1,5 +1,6 @@
 -- editor configs
 -- neo-tree
+-- comment
 
 return {
   {
@@ -19,6 +20,18 @@ return {
     end,
     opts = {
       sources = { "filesystem" }, -- no need others
+    },
+  },
+  {
+    "numToStr/Comment.nvim",
+    event = "VeryLazy",
+    opts = {
+      mappings = {
+        -- Operator-pending mapping; `gcc` `gbc` `gc[count]{motion}` `gb[count]{motion}`
+        basic = true,
+        -- Extra mapping; `gco`, `gcO`, `gcA`
+        extra = false,
+      },
     },
   },
 }
