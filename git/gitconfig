@@ -1,6 +1,6 @@
 [core]
   autocrlf = false
-  editor = lvim
+  editor = nvim
   excludesFile = ~/.gitignore
 [user]
   name = abidkyo
