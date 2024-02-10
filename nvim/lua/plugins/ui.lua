@@ -1,6 +1,7 @@
 -- ui
 -- lualine
 -- bufferline
+-- dressing
 
 return {
   {
@@ -51,5 +52,10 @@ return {
         numbers = "ordinal",
       },
     },
+  },
+  {
+    -- for vim.ui.input and vim.ui.select
+    "stevearc/dressing.nvim",
+    event = "VeryLazy",
   },
 }
