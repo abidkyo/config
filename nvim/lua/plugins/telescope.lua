@@ -3,7 +3,11 @@
 return {
   "nvim-telescope/telescope.nvim",
   tag = "0.1.5",
-  dependencies = { "nvim-lua/plenary.nvim" },
+  dependencies = {
+    { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+    "nvim-tree/nvim-web-devicons",
+    "nvim-lua/plenary.nvim",
+  },
   cmd = "Telescope",
   keys = {
     { "<C-p>", "<cmd>Telescope git_files<cr>", desc = "Git Files" },
@@ -13,21 +17,27 @@ return {
     { "<leader>vk", "<cmd>Telescope keymaps<cr>", desc = "Vim Keymaps" },
     { "<leader>vr", "<cmd>Telescope registers<cr>", desc = "Vim Registers" },
   },
-  opts = {
-    defaults = {
-      mappings = {
-        i = {
-          ["<C-j>"] = "move_selection_next",
-          ["<C-k>"] = "move_selection_previous",
-          ["<C-n>"] = "cycle_history_next",
-          ["<C-p>"] = "cycle_history_prev",
-        },
-        n = {
-          ["<C-j>"] = "move_selection_next",
-          ["<C-k>"] = "move_selection_previous",
-          ["q"] = "close",
+  config = function()
+    local telescope = require("telescope")
+
+    telescope.setup({
+      defaults = {
+        mappings = {
+          i = {
+            ["<C-j>"] = "move_selection_next",
+            ["<C-k>"] = "move_selection_previous",
+            ["<C-n>"] = "cycle_history_next",
+            ["<C-p>"] = "cycle_history_prev",
+          },
+          n = {
+            ["<C-j>"] = "move_selection_next",
+            ["<C-k>"] = "move_selection_previous",
+            ["q"] = "close",
+          },
         },
       },
-    },
-  },
+    })
+
+    telescope.load_extension("fzf")
+  end,
 }
