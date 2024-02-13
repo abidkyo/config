@@ -10,10 +10,10 @@ return {
   },
   cmd = "Telescope",
   keys = {
-    { "<C-p>", "<cmd>Telescope git_files<cr>", desc = "Git Files" },
+    { "<C-p>", "<cmd>Telescope git_files<cr>i", desc = "Git Files" }, -- start in insert mode
     { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find Files" },
-    { "<leader>st", "<cmd>Telescope live_grep<cr>", desc = "Search Text" },
-    { "<leader>vh", "<cmd>Telescope help_tags<cr>", desc = "Vim Help" },
+    { "<leader>st", "<cmd>Telescope live_grep<cr>i", desc = "Search Text" }, -- start in insert mode
+    { "<leader>vh", "<cmd>Telescope help_tags<cr>i", desc = "Vim Help" }, -- start in insert mode
     { "<leader>vk", "<cmd>Telescope keymaps<cr>", desc = "Vim Keymaps" },
     { "<leader>vr", "<cmd>Telescope registers<cr>", desc = "Vim Registers" },
 
@@ -27,6 +27,7 @@ return {
 
     telescope.setup({
       defaults = {
+        initial_mode = "normal",
         mappings = {
           i = {
             ["<C-j>"] = "move_selection_next",
