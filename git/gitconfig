@@ -1,15 +1,20 @@
+#  gitconfig
+
+[user]
+  name = abidkyo
+  email = kyotasuna95@gmail.com
+
 [core]
   autocrlf = false
   editor = nvim
   excludesFile = ~/.gitignore
-[user]
-  name = abidkyo
-  email = kyotasuna95@gmail.com
-  signingKey = ""
-[color]
-  ui = auto
+
 [init]
-	defaultBranch = main
+  defaultBranch = main
+
+[pull]
+  rebase = true
+
 [alias]
   alias = config --get-regexp alias
   co = checkout
@@ -18,6 +23,7 @@
   lconfig = config --edit
   ll = "!f() { git log --stat --max-count=${1-5}; }; f"
   ls = "!f() { git log --pretty=format:'%C(yellow)%h%Creset -%C(green)%d%Creset %s' --max-count=${1-10}; }; f"
+  lsdiff = "!f() { git log --pretty=format:'%C(yellow)%h%Creset -%C(green)%d%Creset %s' --abbrev-commit --date=relative ${1}..${2}; }; f"
   pa = push --all
   pad = push --all --dry-run
   rabort = rebase --abort
@@ -30,11 +36,4 @@
   suifr = submodule update --init --force --recursive
   sw = switch
   tree = "!f() { git ls-tree -r --name-only HEAD | tree --fromfile; }; f"
-[gpg]
-  program = gpg
-[commit]
-  gpgSign = false
-[tag]
-  forceSignAnnotated = false
-[pull]
-  rebase = true
+
