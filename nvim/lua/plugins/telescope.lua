@@ -16,6 +16,11 @@ return {
     { "<leader>vh", "<cmd>Telescope help_tags<cr>", desc = "Vim Help" },
     { "<leader>vk", "<cmd>Telescope keymaps<cr>", desc = "Vim Keymaps" },
     { "<leader>vr", "<cmd>Telescope registers<cr>", desc = "Vim Registers" },
+
+    { "<leader>gs", "<cmd>Telescope git_status<cr>", desc = "Git Status" },
+    { "<leader>gc", "<cmd>Telescope git_commits<cr>", desc = "Git Commits" },
+    { "<leader>gb", "<cmd>Telescope git_branches<cr>", desc = "Git Branches" },
+    { "<leader>gf", "<cmd>Telescope git_bcommits<cr>", desc = "Git Buffer Commits" },
   },
   config = function()
     local telescope = require("telescope")
