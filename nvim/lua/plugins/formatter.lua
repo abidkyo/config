@@ -23,6 +23,8 @@ return {
       cpp = { "clang_format" },
       bash = { "shfmt" },
       sh = { "shfmt" },
+      bib = { "bibtex-tidy" },
+      tex = { "latexindent" },
     },
     formatters = {
       shfmt = {
