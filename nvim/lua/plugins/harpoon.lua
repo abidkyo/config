@@ -35,4 +35,7 @@ return {
       desc = "Harpoon Next File",
     },
   },
+  config = function()
+    require("harpoon"):setup({})
+  end,
 }
