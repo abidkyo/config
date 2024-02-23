@@ -12,7 +12,7 @@ vim.keymap.set("n", "<leader>q", "<cmd>quit<cr>", { desc = "Quit" })
 
 -- buffer
 vim.keymap.set("n", "<leader>br", "<cmd>edit!<cr>", { desc = "Reload Buffer" })
-vim.keymap.set("n", "<leader>bd", "<cmd>bdelete<cr>", { desc = "Delete Buffer" })
+vim.keymap.set("n", "<leader>c", "<cmd>bdelete<cr>", { desc = "Close Buffer" })
 
 -- window
 vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "GoTo Left Window" })
