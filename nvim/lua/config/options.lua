@@ -42,3 +42,6 @@ vim.opt.showmode = true
 -- search
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
+
+-- diagnostic
+vim.diagnostic.config({ virtual_text = false })
