@@ -45,3 +45,19 @@ vim.keymap.set("v", ">", ">gv")
 vim.keymap.set("n", "gl", vim.diagnostic.open_float)
 vim.keymap.set("n", "<leader>dq", vim.diagnostic.setloclist)
 vim.keymap.set("n", "<leader>dd", "<cmd>Telescope diagnostics<cr>")
+
+-- lsp keymaps on attach
+vim.api.nvim_create_autocmd({ "LspAttach" }, {
+  callback = function(ev)
+    local opts = { buffer = ev.buf }
+    vim.keymap.set("n", "gd", "<cmd>Telescope lsp_definitions<cr>", opts)
+    vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
+    vim.keymap.set("n", "gr", "<cmd>Telescope lsp_references<cr>", opts)
+    vim.keymap.set("n", "gi", "<cmd>Telescope lsp_implementations<cr>", opts)
+    vim.keymap.set("n", "gt", "<cmd>Telescope lsp_type_definitions<cr>", opts)
+    vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+    vim.keymap.set("n", "<leader>lr", vim.lsp.buf.rename, opts)
+    vim.keymap.set({ "n", "v" }, "<space>la", vim.lsp.buf.code_action, opts)
+    vim.keymap.set({ "n", "i" }, "<C-h>", vim.lsp.buf.signature_help, opts)
+  end,
+})
