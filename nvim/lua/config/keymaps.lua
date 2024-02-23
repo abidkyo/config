@@ -40,3 +40,8 @@ vim.keymap.set("n", "<C-d", "<C-d>zz", { desc = "Scroll Down and Center" })
 -- stay in visual while indenting
 vim.keymap.set("v", "<", "<gv")
 vim.keymap.set("v", ">", ">gv")
+
+--diagnostic
+vim.keymap.set("n", "gl", vim.diagnostic.open_float)
+vim.keymap.set("n", "<leader>dq", vim.diagnostic.setloclist)
+vim.keymap.set("n", "<leader>dd", "<cmd>Telescope diagnostics<cr>")
