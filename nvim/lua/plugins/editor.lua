@@ -2,6 +2,7 @@
 -- neo-tree
 -- comment
 -- nvim-cmp
+-- lsp
 
 return {
   {
@@ -40,6 +41,7 @@ return {
     version = false,
     event = { "InsertEnter" },
     dependencies = {
+      "hrsh7th/cmp-nvim-lsp", -- cmp source buffer
       "hrsh7th/cmp-buffer", -- cmp source buffer
       "hrsh7th/cmp-path", -- cmp source paths
       "L3MON4D3/LuaSnip", -- snippet engine
@@ -71,10 +73,40 @@ return {
           ["<CR>"] = cmp.mapping.confirm({ select = false }),
         }),
         sources = cmp.config.sources({
+          { name = "nvim_lsp" },
           { name = "luasnip" },
           { name = "buffer" },
           { name = "path" },
         }),
+      })
+    end,
+  },
+  {
+    "neovim/nvim-lspconfig",
+    ft = { "lua", "sh", "c", "cpp", "tex", "bib" },
+    dependencies = {
+      "williamboman/mason.nvim",
+      "williamboman/mason-lspconfig.nvim",
+      "hrsh7th/cmp-nvim-lsp",
+      { "folke/neodev.nvim", opts = {} }, -- for nvim config, runtime, plugins
+    },
+    config = function()
+      local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
+      require("lspconfig")["lua_ls"].setup({
+        capabilities = capabilities,
+      })
+
+      require("lspconfig")["bashls"].setup({
+        capabilities = capabilities,
+      })
+
+      require("lspconfig")["clangd"].setup({
+        capabilities = capabilities,
+      })
+
+      require("lspconfig")["ltex"].setup({
+        capabilities = capabilities,
       })
     end,
   },
