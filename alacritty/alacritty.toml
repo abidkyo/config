@@ -49,7 +49,7 @@ action = "PasteSelection"
 mouse = "Middle"
 
 [scrolling]
-history = 1000
+history = 5000
 
 [selection]
 save_to_clipboard = true
