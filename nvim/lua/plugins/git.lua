@@ -1,5 +1,6 @@
 -- git integration
 -- gitsigns
+-- fugitive
 
 return {
   {
@@ -16,5 +17,9 @@ return {
         current_line_blame_formatter = "<abbrev_sha> <author> <author_time:%R>",
       })
     end,
+  },
+  {
+    "tpope/vim-fugitive",
+    event = { "VeryLazy" },
   },
 }
