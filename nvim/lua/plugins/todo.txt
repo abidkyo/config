@@ -1,0 +1,12 @@
+change keymap
+idea: info keymaps to leader i
+      lsp leader l
+      diagnostic leader d
+
+keymap desc
+
+nvimlspconfig wiki
+- luasnip jumpable
+
+video on neoconf
+
