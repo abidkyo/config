@@ -5,6 +5,7 @@
 !.gitignore
 !git
 !clang
+!cmake-format
 
 !lazygit
 lazygit/*

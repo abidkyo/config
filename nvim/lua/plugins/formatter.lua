@@ -25,10 +25,15 @@ return {
       sh = { "shfmt" },
       bib = { "bibtex-tidy" },
       tex = { "latexindent" },
+      cmake = { "cmake_format" },
+      json = { "jq" },
     },
     formatters = {
       shfmt = {
         prepend_args = { "-i", "2" },
+      },
+      cmake_format = {
+        prepend_args = { "-c", "/home/mb93396/.config/cmake-format/cmake-format.py", "--" },
       },
     },
   },
