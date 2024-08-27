@@ -6,7 +6,7 @@ return {
     build = ":MasonUpdate",
     cmd = "Mason",
     keys = {
-      { "<leader>lm", "<cmd>Mason<cr>", desc = "Mason" },
+      { "<leader>im", "<cmd>Mason<cr>", desc = "Mason" },
     },
     opts = {
       ui = {

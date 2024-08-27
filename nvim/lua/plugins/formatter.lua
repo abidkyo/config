@@ -5,7 +5,7 @@ return {
   dependencies = "williamboman/mason.nvim", -- neeeded to find formatter binary
   cmd = "ConformInfo",
   keys = {
-    { "<leader>lc", "<cmd>ConformInfo<cr>", desc = "ConformInfo" },
+    { "<leader>ic", "<cmd>ConformInfo<cr>", desc = "ConformInfo" },
     {
       "<leader>lf",
       function()
