@@ -2,6 +2,15 @@
 
 return {
   "nvim-treesitter/nvim-treesitter",
+  dependencies = {
+    "nvim-treesitter/nvim-treesitter-context",
+    keys = {
+      { "<leader>tt", "<cmd>TSContextToggle<cr>", desc = "TS Context Toggle" },
+    },
+    config = function()
+      require("treesitter-context").setup({ enable = false })
+    end,
+  },
   build = ":TSUpdate",
   event = { "VeryLazy" },
   config = function()
