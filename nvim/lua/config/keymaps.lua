@@ -46,9 +46,9 @@ vim.keymap.set("n", "gl", vim.diagnostic.open_float)
 vim.keymap.set("n", "<leader>dq", vim.diagnostic.setloclist)
 vim.keymap.set("n", "<leader>dd", "<cmd>Telescope diagnostics<cr>")
 
--- lsp keymaps on attach
 vim.api.nvim_create_autocmd({ "LspAttach" }, {
   callback = function(ev)
+    -- lsp keymaps on attach
     local opts = { buffer = ev.buf }
     vim.keymap.set("n", "gd", "<cmd>Telescope lsp_definitions<cr>", opts)
     vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
@@ -59,5 +59,14 @@ vim.api.nvim_create_autocmd({ "LspAttach" }, {
     vim.keymap.set("n", "<leader>lr", vim.lsp.buf.rename, opts)
     vim.keymap.set({ "n", "v" }, "<space>da", vim.lsp.buf.code_action, opts)
     vim.keymap.set({ "n", "i" }, "<leader>lh", vim.lsp.buf.signature_help, opts)
+
+    -- disable hover for ruff
+    local client = vim.lsp.get_client_by_id(ev.data.client_id)
+    if client == nil then
+      return
+    end
+    if client.name == "ruff" then
+      client.server_capabilities.hoverProvider = false
+    end
   end,
 })

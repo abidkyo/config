@@ -25,6 +25,8 @@ return {
         "clangd",
         "ltex",
         "lua_ls",
+        "basedpyright",
+        "ruff",
       },
     },
   },

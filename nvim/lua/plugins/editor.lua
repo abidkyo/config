@@ -83,7 +83,7 @@ return {
   },
   {
     "neovim/nvim-lspconfig",
-    ft = { "lua", "sh", "c", "cpp", "tex", "bib" },
+    ft = { "lua", "sh", "c", "cpp", "tex", "bib", "python" },
     dependencies = {
       "williamboman/mason.nvim",
       "williamboman/mason-lspconfig.nvim",
@@ -108,6 +108,19 @@ return {
       require("lspconfig")["ltex"].setup({
         capabilities = capabilities,
       })
+
+      require("lspconfig")["basedpyright"].setup({
+        capabilities = capabilities,
+        settings = {
+          basedpyright = {
+            analysis = {
+              ignore = { "*" },
+            },
+          },
+        },
+      })
+
+      require("lspconfig")["ruff"].setup({})
     end,
   },
 }
