@@ -17,6 +17,9 @@
 
 [alias]
   alias = config --get-regexp alias
+  ca = commit --amend
+  can = commit --amend --no-edit
+  canr = commit --amend --no-edit --reset-author
   co = checkout
   fetchp = fetch --prune --prune-tags
   gconfig = config --global --edit
@@ -26,6 +29,7 @@
   lsdiff = "!f() { git log --pretty=format:'%C(yellow)%h%Creset -%C(green)%d%Creset %s' --abbrev-commit --date=relative ${1}..${2}; }; f"
   pa = push --all
   pad = push --all --dry-run
+  pushf = push --force-with-lease
   rabort = rebase --abort
   rcont = rebase --continue
   rei = rebase -i
