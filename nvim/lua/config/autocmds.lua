@@ -2,7 +2,7 @@
 
 -- c file: tab == 4 spaces
 vim.api.nvim_create_autocmd({ "FileType" }, {
-  pattern = { "c" },
+  pattern = { "c", "cpp" },
   callback = function()
     vim.opt.shiftwidth = 4
     vim.opt.tabstop = 4
