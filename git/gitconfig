@@ -15,6 +15,15 @@
 [pull]
   rebase = true
 
+[rerere]
+	enabled = true
+
+[column]
+	ui = auto
+
+[branch]
+	sort = -committerdate
+
 [alias]
   alias = config --get-regexp alias
   ca = commit --amend
