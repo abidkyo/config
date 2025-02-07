@@ -3,6 +3,7 @@
 -- comment
 -- nvim-cmp
 -- lsp
+-- zig.vim
 
 return {
   {
@@ -83,7 +84,7 @@ return {
   },
   {
     "neovim/nvim-lspconfig",
-    ft = { "lua", "sh", "c", "cpp", "tex", "bib", "python" },
+    ft = { "lua", "sh", "c", "cpp", "tex", "bib", "python", "zig" },
     dependencies = {
       "williamboman/mason.nvim",
       "williamboman/mason-lspconfig.nvim",
@@ -121,6 +122,24 @@ return {
       })
 
       require("lspconfig")["ruff"].setup({})
+
+      require("lspconfig")["zls"].setup({
+        capabilities = capabilities,
+        settings = {
+          zls = {
+            enable_build_on_save = false,
+          },
+        },
+      })
+    end,
+  },
+  {
+    -- for zls
+    "ziglang/zig.vim",
+    ft = { "zig" },
+    config = function()
+      vim.g.zig_fmt_parse_errors = 0
+      vim.g.zig_fmt_autosave = 0
     end,
   },
 }
