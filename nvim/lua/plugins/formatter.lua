@@ -33,7 +33,7 @@ return {
         prepend_args = { "-i", "2" },
       },
       cmake_format = {
-        prepend_args = { "-c", "/home/mb93396/.config/cmake-format/cmake-format.py", "--" },
+        prepend_args = { "-c", "~/.config/cmake-format/cmake-format.py", "--" },
       },
     },
   },
