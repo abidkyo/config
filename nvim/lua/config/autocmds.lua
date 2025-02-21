@@ -9,6 +9,15 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
   end,
 })
 
+-- cmeke file: tab == 2 spaces
+vim.api.nvim_create_autocmd({ "FileType" }, {
+  pattern = { "cmake" },
+  callback = function()
+    vim.opt.shiftwidth = 2
+    vim.opt.tabstop = 2
+  end,
+})
+
 -- q keymap to close file
 vim.api.nvim_create_autocmd({ "FileType" }, {
   pattern = {
