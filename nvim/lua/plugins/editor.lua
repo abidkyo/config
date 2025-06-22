@@ -94,23 +94,23 @@ return {
     config = function()
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-      require("lspconfig")["lua_ls"].setup({
+      vim.lsp.config("lua_ls", {
         capabilities = capabilities,
       })
 
-      require("lspconfig")["bashls"].setup({
+      vim.lsp.config("bashls", {
         capabilities = capabilities,
       })
 
-      require("lspconfig")["clangd"].setup({
+      vim.lsp.config("clangd", {
         capabilities = capabilities,
       })
 
-      require("lspconfig")["ltex"].setup({
+      vim.lsp.config("ltex", {
         capabilities = capabilities,
       })
 
-      require("lspconfig")["basedpyright"].setup({
+      vim.lsp.config("basedpyright", {
         capabilities = capabilities,
         settings = {
           basedpyright = {
@@ -121,9 +121,9 @@ return {
         },
       })
 
-      require("lspconfig")["ruff"].setup({})
+      vim.lsp.config("ruff", {})
 
-      require("lspconfig")["zls"].setup({
+      vim.lsp.config("zls", {
         capabilities = capabilities,
         settings = {
           zls = {
