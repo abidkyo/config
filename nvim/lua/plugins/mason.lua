@@ -27,6 +27,7 @@ return {
         "lua_ls",
         "basedpyright",
         "ruff",
+        "zls",
       },
     },
   },
