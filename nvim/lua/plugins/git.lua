@@ -15,6 +15,23 @@ return {
     config = function()
       require("gitsigns").setup({
         current_line_blame_formatter = "<abbrev_sha> <author> <author_time:%R>",
+        on_attach = function (bufnr)
+          local gitsigns = require('gitsigns')
+
+          local function map(mode, l, r, opts)
+            opts = opts or {}
+            opts.buffer = bufnr
+            vim.keymap.set(mode, l, r, opts)
+          end
+
+          -- Actions
+          map('n', '<leader>gsh', gitsigns.stage_hunk)
+          map('n', '<leader>grh', gitsigns.reset_hunk)
+
+          map('x', '<leader>gsh', function()
+            gitsigns.stage_hunk({ vim.fn.line('.'), vim.fn.line('v') })
+          end)
+        end
       })
     end,
   },
