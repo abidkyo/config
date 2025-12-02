@@ -27,6 +27,8 @@ return {
       tex = { "latexindent" },
       cmake = { "cmake_format" },
       json = { "jq" },
+      markdown = { "prettierd" },
+      yaml = { "prettierd" },
     },
     formatters = {
       shfmt = {
