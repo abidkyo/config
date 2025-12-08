@@ -8,6 +8,7 @@ vim.g.maplocalleader = "\\"
 vim.opt.autowrite = true
 vim.opt.clipboard = "unnamedplus"
 vim.opt.completeopt = "menu,menuone,noselect"
+vim.opt.colorcolumn = "81"
 vim.opt.confirm = true
 vim.opt.spelllang = { "en", "de" }
 vim.opt.swapfile = false
