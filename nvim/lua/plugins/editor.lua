@@ -85,7 +85,7 @@ return {
   {
     "neovim/nvim-lspconfig",
     ft = { "lua", "sh", "c", "cpp", "tex", "bib", "python", "zig",
-      "typescript", "typescriptreact" },
+      "typescript", "typescriptreact", "dart" },
     dependencies = {
       "williamboman/mason.nvim",
       "williamboman/mason-lspconfig.nvim",
