@@ -29,6 +29,7 @@ return {
       json = { "jq" },
       markdown = { "prettierd" },
       yaml = { "prettierd" },
+      html = { "prettierd" },
     },
     formatters = {
       shfmt = {

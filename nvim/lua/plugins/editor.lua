@@ -42,11 +42,11 @@ return {
     version = false,
     event = { "InsertEnter" },
     dependencies = {
-      "hrsh7th/cmp-nvim-lsp", -- cmp source buffer
-      "hrsh7th/cmp-buffer", -- cmp source buffer
-      "hrsh7th/cmp-path", -- cmp source paths
-      "L3MON4D3/LuaSnip", -- snippet engine
-      "saadparwaiz1/cmp_luasnip", -- snippet autocompletion
+      "hrsh7th/cmp-nvim-lsp",         -- cmp source buffer
+      "hrsh7th/cmp-buffer",           -- cmp source buffer
+      "hrsh7th/cmp-path",             -- cmp source paths
+      "L3MON4D3/LuaSnip",             -- snippet engine
+      "saadparwaiz1/cmp_luasnip",     -- snippet autocompletion
       "rafamadriz/friendly-snippets", -- vscode snippets
     },
     config = function()
@@ -84,7 +84,8 @@ return {
   },
   {
     "neovim/nvim-lspconfig",
-    ft = { "lua", "sh", "c", "cpp", "tex", "bib", "python", "zig" },
+    ft = { "lua", "sh", "c", "cpp", "tex", "bib", "python", "zig",
+      "typescript", "typescriptreact" },
     dependencies = {
       "williamboman/mason.nvim",
       "williamboman/mason-lspconfig.nvim",
@@ -108,6 +109,12 @@ return {
 
       vim.lsp.config("ltex", {
         capabilities = capabilities,
+        settings = {
+          ltex = {
+            enabled = { "bibtex", "gitcommit", "markdown", "org", "tex", "restructuredtext", "rsweave", "latex",
+              "quarto", "rmd", "context", "mail", "plaintext" }
+          }
+        }
       })
 
       vim.lsp.config("basedpyright", {
@@ -122,6 +129,7 @@ return {
       })
 
       vim.lsp.config("ruff", {})
+      vim.lsp.config("typescript-language-server", {})
 
       vim.lsp.config("zls", {
         capabilities = capabilities,
