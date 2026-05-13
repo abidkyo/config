@@ -20,6 +20,7 @@ return {
         "bibtex",
         "c",
         "cpp",
+        "dart",
         "html",
         "json",
         "latex",
