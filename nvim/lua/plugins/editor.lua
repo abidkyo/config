@@ -26,18 +26,6 @@ return {
     },
   },
   {
-    "numToStr/Comment.nvim",
-    event = "VeryLazy",
-    opts = {
-      mappings = {
-        -- Operator-pending mapping; `gcc` `gbc` `gc[count]{motion}` `gb[count]{motion}`
-        basic = true,
-        -- Extra mapping; `gco`, `gcO`, `gcA`
-        extra = false,
-      },
-    },
-  },
-  {
     "hrsh7th/nvim-cmp",
     version = false,
     event = { "InsertEnter" },
