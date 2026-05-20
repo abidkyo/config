@@ -11,7 +11,7 @@ vim.keymap.set("n", "<leader>w", "<cmd>write<cr>", { desc = "Save" })
 vim.keymap.set("n", "<leader>q", "<cmd>quit<cr>", { desc = "Quit" })
 
 -- buffer
-vim.keymap.set("n", "<leader>br", "<cmd>edit!<cr>", { desc = "Reload Buffer" })
+vim.keymap.set("n", "<leader>br", "<cmd>edit!<cr><cmd>lsp enable<cr>", { desc = "Reload Buffer" })
 vim.keymap.set("n", "<leader>c", "<cmd>bdelete<cr>", { desc = "Close Buffer" })
 
 -- window
@@ -55,10 +55,11 @@ vim.api.nvim_create_autocmd({ "LspAttach" }, {
     vim.keymap.set("n", "gr", "<cmd>Telescope lsp_references<cr>", opts)
     vim.keymap.set("n", "gi", "<cmd>Telescope lsp_implementations<cr>", opts)
     vim.keymap.set("n", "gt", "<cmd>Telescope lsp_type_definitions<cr>", opts)
+    vim.keymap.set("n", "<leader>ds", "<cmd>Telescope lsp_document_symbols<cr>", opts)
     vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
     vim.keymap.set("n", "<leader>lr", vim.lsp.buf.rename, opts)
     vim.keymap.set({ "n", "v" }, "<space>da", vim.lsp.buf.code_action, opts)
-    vim.keymap.set({ "n", "i" }, "<leader>lh", vim.lsp.buf.signature_help, opts)
+    vim.keymap.set({ "n", "i" }, "<C-S>", vim.lsp.buf.signature_help, opts)
 
     -- disable hover for ruff
     local client = vim.lsp.get_client_by_id(ev.data.client_id)
