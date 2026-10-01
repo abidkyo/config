@@ -17,7 +17,7 @@ return {
   {
     "williamboman/mason-lspconfig.nvim",
     keys = {
-      { "<leader>il", "<cmd>LspInfo<cr>", desc = "LspInfo" },
+      { "<leader>il", "<cmd>checkhealth lsp<cr>", desc = "LspInfo" },
     },
     opts = {
       ensure_installed = {

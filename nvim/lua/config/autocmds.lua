@@ -24,7 +24,6 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
     "PlenaryTestPopup",
     "checkhealth",
     "help",
-    "lspinfo",
     "man",
     "neo-tree",
     "netrw",
