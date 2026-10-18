@@ -103,8 +103,10 @@ return {
 
       -- vim.lsp.config("bashls", {})
       -- vim.lsp.config("clangd", {})
+      -- vim.lsp.config("ltex_plus", {})
       -- vim.lsp.config("ruff", {})
       -- vim.lsp.config("typescript-language-server", {})
+
 
       vim.lsp.config("lua_ls", {
         settings = {
@@ -113,16 +115,6 @@ return {
             diagnostics = { globals = { "vim" } },
           },
         },
-      })
-
-      vim.lsp.config("ltex", {
-        settings = {
-          ltex = {
-            enabled = { "bibtex", "gitcommit", "markdown", "org",
-              "tex", "restructuredtext", "rsweave", "latex",
-              "quarto", "rmd", "context", "mail", "plaintext" }
-          }
-        }
       })
 
       vim.lsp.config("basedpyright", {

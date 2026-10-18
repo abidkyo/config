@@ -24,7 +24,7 @@ return {
         "basedpyright",
         "bashls",
         "clangd",
-        "ltex",
+        "ltex_plus",
         "lua_ls",
         "ruff",
         "zls",
