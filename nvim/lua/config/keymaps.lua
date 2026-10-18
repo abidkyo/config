@@ -11,7 +11,7 @@ vim.keymap.set("n", "<leader>w", "<cmd>write<cr>", { desc = "Save" })
 vim.keymap.set("n", "<leader>q", "<cmd>quit<cr>", { desc = "Quit" })
 
 -- buffer
-vim.keymap.set("n", "<leader>br", "<cmd>edit!<cr><cmd>lsp enable<cr>", { desc = "Reload Buffer" })
+vim.keymap.set("n", "<leader>br", "<cmd>edit!<cr>", { desc = "Reload Buffer" })
 vim.keymap.set("n", "<leader>c", "<cmd>bdelete<cr>", { desc = "Close Buffer" })
 
 -- window
