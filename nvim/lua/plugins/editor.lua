@@ -1,6 +1,5 @@
 -- editor configs
 -- neo-tree
--- comment
 -- nvim-cmp
 -- lsp
 -- zig.vim
@@ -87,8 +86,10 @@ return {
   },
   {
     "neovim/nvim-lspconfig",
-    ft = { "lua", "sh", "c", "cpp", "tex", "bib", "python", "zig",
-      "typescript", "typescriptreact", "dart" },
+    ft = {
+      "lua", "sh", "c", "cpp", "tex", "bib", "python", "zig",
+      "typescript", "typescriptreact", "dart"
+    },
     dependencies = {
       "williamboman/mason.nvim",
       "williamboman/mason-lspconfig.nvim",
@@ -96,32 +97,35 @@ return {
       { "folke/neodev.nvim", opts = {} }, -- for nvim config, runtime, plugins
     },
     config = function()
-      local capabilities = require("cmp_nvim_lsp").default_capabilities()
+      vim.lsp.config("*", {
+        capabilities = require("cmp_nvim_lsp").default_capabilities()
+      })
+
+      -- vim.lsp.config("bashls", {})
+      -- vim.lsp.config("clangd", {})
+      -- vim.lsp.config("ruff", {})
+      -- vim.lsp.config("typescript-language-server", {})
 
       vim.lsp.config("lua_ls", {
-        capabilities = capabilities,
-      })
-
-      vim.lsp.config("bashls", {
-        capabilities = capabilities,
-      })
-
-      vim.lsp.config("clangd", {
-        capabilities = capabilities,
+        settings = {
+          Lua = {
+            runtime = { version = "LuaJIT" },
+            diagnostics = { globals = { "vim" } },
+          },
+        },
       })
 
       vim.lsp.config("ltex", {
-        capabilities = capabilities,
         settings = {
           ltex = {
-            enabled = { "bibtex", "gitcommit", "markdown", "org", "tex", "restructuredtext", "rsweave", "latex",
+            enabled = { "bibtex", "gitcommit", "markdown", "org",
+              "tex", "restructuredtext", "rsweave", "latex",
               "quarto", "rmd", "context", "mail", "plaintext" }
           }
         }
       })
 
       vim.lsp.config("basedpyright", {
-        capabilities = capabilities,
         settings = {
           basedpyright = {
             analysis = {
@@ -131,11 +135,7 @@ return {
         },
       })
 
-      vim.lsp.config("ruff", {})
-      vim.lsp.config("typescript-language-server", {})
-
       vim.lsp.config("zls", {
-        capabilities = capabilities,
         settings = {
           zls = {
             enable_build_on_save = false,
