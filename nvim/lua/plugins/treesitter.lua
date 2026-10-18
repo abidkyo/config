@@ -7,31 +7,31 @@ return {
     keys = {
       { "<leader>tt", "<cmd>TSContext toggle<cr>", desc = "TS Context Toggle" },
     },
-    config = function()
-      require("treesitter-context").setup({ enable = false })
-    end,
   },
+  branch = 'main',
+  version = false,
   build = ":TSUpdate",
   event = { "VeryLazy" },
-  config = function()
-    require("nvim-treesitter.configs").setup({
-      ensure_installed = {
-        "bash",
-        "bibtex",
-        "c",
-        "cpp",
-        "dart",
-        "html",
-        "json",
-        "latex",
-        "lua",
-        "python",
-        "vim",
-        "vimdoc",
-      },
-      sync_install = false,
-      highlight = { enable = true },
-      indent = { enable = true },
-    })
-  end,
+  opts = {
+    sync_install = false,
+    highlight = { enable = true },
+    indent = { enable = true },
+    ensure_installed = {
+      "bash",
+      "bibtex",
+      "c",
+      "cpp",
+      "dart",
+      "html",
+      "json",
+      "latex",
+      "lua",
+      "markdown",
+      "python",
+      "toml",
+      "vim",
+      "vimdoc",
+      "yaml",
+    },
+  },
 }
