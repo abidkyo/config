@@ -147,6 +147,7 @@ return {
   {
     -- for zls
     "ziglang/zig.vim",
+    url = "https://codeberg.org/ziglang/zig.vim",
     ft = { "zig" },
     config = function()
       vim.g.zig_fmt_parse_errors = 0

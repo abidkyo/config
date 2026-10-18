@@ -2,7 +2,7 @@
 
 return {
   {
-    "williamboman/mason.nvim",
+    "mason-org/mason.nvim",
     build = ":MasonUpdate",
     cmd = "Mason",
     keys = {
@@ -15,17 +15,17 @@ return {
     },
   },
   {
-    "williamboman/mason-lspconfig.nvim",
+    "mason-org/mason-lspconfig.nvim",
     keys = {
       { "<leader>il", "<cmd>checkhealth lsp<cr>", desc = "LspInfo" },
     },
     opts = {
       ensure_installed = {
+        "basedpyright",
         "bashls",
         "clangd",
         "ltex",
         "lua_ls",
-        "basedpyright",
         "ruff",
         "zls",
       },
